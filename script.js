@@ -1,4 +1,4 @@
-/* Weiner portfolio — no router needed: every page is a real document. */
+/* Weiner portfolio - no router needed: every page is a real document. */
 (function () {
   "use strict";
 
