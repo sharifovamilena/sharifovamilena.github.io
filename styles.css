@@ -902,3 +902,6 @@ footer { border-top: 1px solid var(--ink); }
 /* карточка Ореола на главной: GIF 16:9 в широкой рамке, держим верх кадра с меню */
 .feature.w12.feature-reel .plate { aspect-ratio: 2 / 1; }
 .feature-reel .plate img { object-position: center top; }
+
+/* GIF-шоурил: на телефоне грузятся легкие версии */
+picture { display: contents; }
