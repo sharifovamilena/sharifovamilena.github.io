@@ -2,18 +2,21 @@
 
 Сайт: **https://sharifovamilena.github.io/**
 
-Обычная статика: четыре HTML-страницы, один CSS, один JS. Сборки нет -
+Обычная статика: шесть HTML-страниц, один CSS, один JS. Сборки нет -
 правишь файл, через минуту он на сайте.
 
 ```
 index.html        главная - проекты, услуги, о себе, ставки, контакты
-risky.html        Проект 01 - RISKY, AI-кампания в бьюти
-slurp.html        Проект 02 - Slurp Laboratories, бренд-мир и ивент
-hydromer.html     Проект 03 - Hydromer, сияющий уходовый мист
+oreol.html        Проект 01 - Ореол ТВ, Smart TV-приложение (шоурил на GIF)
+oreol-app.html    интерактивный прототип Ореол ТВ (ТВ + мобильная версия)
+risky.html        Проект 02 - RISKY, AI-кампания в бьюти
+slurp.html        Проект 03 - Slurp Laboratories, бренд-мир и ивент
+hydromer.html     Проект 04 - Hydromer, сияющий уходовый мист
 styles.css        все стили
 script.js         анимации появления, меню, пауза видео за экраном
 images/           13 фотографий в WebP
-media/            2 лупа в MP4 + WebM с кадрами-постерами
+media/            2 лупа в MP4 + WebM с кадрами-постерами, 9 GIF шоурила Ореол ТВ
+media/oreol/      кадры фильмов для прототипа (общественное достояние, Каминандес - CC BY)
 og-image.jpg      превью для соцсетей, 1200x630
 favicon.svg  sitemap.xml  robots.txt
 ```

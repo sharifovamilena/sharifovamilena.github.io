@@ -861,3 +861,44 @@ footer { border-top: 1px solid var(--ink); }
   text-wrap: balance;
   text-wrap: pretty;   /* fallback for engines without balance */
 }
+
+/* ==========================================================================
+   CASE: ОРЕОЛ ТВ - шоурил из GIF-записей прототипа
+   ========================================================================== */
+
+/* GIF записан в 16:9 - кадр 21:9 срезал бы меню и плеер */
+.case-plate-lead.reel-lead { aspect-ratio: 16 / 9; }
+
+.reel-figs { margin-block: clamp(24px, 3.4vw, 48px) 0; }
+
+.reel-head { margin-top: clamp(48px, 7vw, 104px); }
+
+.reel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.reel-item { margin: 0; background: var(--paper); display: flex; flex-direction: column; }
+.reel-item .plate { border: 0; border-bottom: 1px solid var(--ink); aspect-ratio: 16 / 9; }
+.reel-item figcaption { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+.reel-item figcaption p { font-size: 14.5px; line-height: 1.5; max-width: 56ch; }
+
+/* телефон стоит в том же кадре 16:9, по центру на черном */
+.reel-phone .plate { background: var(--ink); }
+.reel-phone .plate img { object-fit: contain; padding-block: 12px; }
+
+/* в таблице исследования цитаты длинные - кегль чуть меньше, чем у ставок */
+.pains .svc-row h3 { font-size: clamp(1.05rem, 1.7vw, 1.45rem); }
+.pains .svc-row .desc .mono { display: block; margin-top: 8px; }
+
+@media (max-width: 860px) {
+  .reel { grid-template-columns: 1fr; }
+  .reel-phone .plate { aspect-ratio: 4 / 5; }
+}
+
+/* карточка Ореола на главной: GIF 16:9 в широкой рамке, держим верх кадра с меню */
+.feature.w12.feature-reel .plate { aspect-ratio: 2 / 1; }
+.feature-reel .plate img { object-position: center top; }
