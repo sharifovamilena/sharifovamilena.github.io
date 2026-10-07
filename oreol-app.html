@@ -156,6 +156,14 @@ body {
 .set.booting .boot { animation: boot 1500ms ease forwards; }
 .set.booting .boot span { animation: logo 1500ms var(--spring) forwards; }
 @keyframes boot { 0% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; } }
+/* первая загрузка: заставка держится, пока не готовы картинки первого экрана; дальше картинки проявляются, а не «выскакивают» */
+.boot { transition: opacity 480ms ease; }
+.set.loading .boot { opacity: 1; pointer-events: auto; }
+.set.loading .boot span { animation: ldpulse 1400ms ease-in-out infinite; }
+@keyframes ldpulse { 50% { opacity: .55; } }
+.scr img { opacity: 0; transition: opacity 320ms ease; }
+.scr img.in { opacity: 1; }
+.scr img.in.now { transition: none; }
 @keyframes logo { 0% { opacity: 0; transform: scale(.92); filter: blur(6px); } 30% { opacity: 1; transform: none; filter: none; } 75% { opacity: 1; } 100% { opacity: 0; transform: scale(1.04); } }
 
 /* ---------- постеры ---------- */
@@ -1221,7 +1229,7 @@ html.as-phone .tv.mob .bar { padding: 6px 16px 8px; }
 <div class="dev" aria-hidden="true"><i class="act"></i><i class="vup"></i><i class="vdn"></i><i class="pwr"></i><i class="cam"></i></div>
 <div class="page">
   <section class="room" aria-label="Телевизор">
-    <div class="set" id="set">
+    <div class="set loading" id="set">
       <div class="bezel">
         <div class="tv" id="tv" tabindex="0" role="application" aria-label="Ореол ТВ. Нажмите на экран и управляйте стрелками, Enter — выбрать, Esc — назад, P — пауза, кнопка питания — включить или выключить.">
           <div class="scr" id="scr"></div>
@@ -2410,9 +2418,44 @@ html.as-phone .tv.mob .bar { padding: 6px 16px 8px; }
   [].forEach.call(viewBtns, function (b) { b.addEventListener("click", function () { setView(b.getAttribute("data-view")); }); });
   if (document.documentElement.classList.contains("as-phone")) setView("phone");
 
+  /* ---------- картинки: предзагрузка и мягкое появление ---------- */
+  var READY = {}, KEEP = [];
+  function decoded(im) { return im.decode ? im.decode().catch(function () {}) : Promise.resolve(); }
+  function imgIn(i) {
+    if (i.classList.contains("in")) return;
+    var u = i.getAttribute("src"), done = function () { READY[u] = 1; i.classList.add("in"); };
+    if (READY[u]) { i.decoding = "sync"; i.classList.add("in", "now"); return; }
+    if (i.complete && i.naturalWidth) decoded(i).then(done);
+    else { i.addEventListener("load", function () { decoded(i).then(done); }, { once: true }); i.addEventListener("error", done, { once: true }); }
+  }
+  new MutationObserver(function (ms) {
+    ms.forEach(function (m) { [].forEach.call(m.addedNodes, function (n) {
+      if (n.nodeType !== 1) return; if (n.tagName === "IMG") imgIn(n); else [].forEach.call(n.querySelectorAll("img"), imgIn); }); });
+  }).observe(scr, { childList: true, subtree: true });
+  function preload(list) {
+    return Promise.all(list.map(function (u) {
+      if (READY[u]) return null;
+      return new Promise(function (res) { var im = new Image(); im.onload = function () { decoded(im).then(function () { READY[u] = 1; res(); }); }; im.onerror = res; im.src = u; KEEP.push(im); });
+    }));
+  }
+  function preloadRest() {
+    var all = {}, re = /"((?:img|media\/oreol)\/[\w.-]+\.(?:jpe?g|png|webp))"/g, m, txt = [].map.call(document.scripts, function (x) { return x.text; }).join("");
+    while ((m = re.exec(txt))) all[m[1]] = 1;
+    var q = Object.keys(all).filter(function (u) { return !READY[u]; }), idle = window.requestIdleCallback || function (f) { return setTimeout(f, 60); };
+    (function next() { if (!q.length) return; idle(function () { preload(q.splice(0, 4)).then(next); }); })();
+  }
+
   function start() {
     applyA(); build(); scr.classList.add("instant"); focus("hero", 0, true);
     requestAnimationFrame(function () { requestAnimationFrame(function () { scr.classList.remove("instant"); }); });
+    var box = tv.getBoundingClientRect(), first = [].filter.call(scr.querySelectorAll("img"), function (i) {
+      var b = i.getBoundingClientRect(); return b.bottom > box.top && b.top < box.bottom && b.right > box.left && b.left < box.right;
+    }).map(function (i) { return i.getAttribute("src"); });
+    var wait = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+    Promise.race([Promise.all([preload(first), wait(500)]), wait(3000)]).then(function () {
+      [].forEach.call(scr.querySelectorAll("img"), function (i) { if (READY[i.getAttribute("src")]) i.classList.add("in", "now"); });
+      set.classList.remove("loading"); preloadRest();
+    });
   }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
 })();
