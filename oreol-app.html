@@ -396,8 +396,8 @@ body {
 .dprog i.on { background: #F5F5F7; }
 .dprog span { margin-left: 14px; font-size: 22px; color: rgba(245,245,247,.6); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .slide.intro .dq { top: 250px; width: 1500px; font-size: 112px; font-style: normal; font-family: var(--d1); font-weight: 900; letter-spacing: -.045em; line-height: .95; }
-.intro .lead { position: absolute; left: 110px; top: 540px; width: 1100px; font-size: 34px; line-height: 1.45; color: rgba(245,245,247,.78); }
-.intro .btns { position: absolute; left: 110px; top: 720px; }
+.intro .lead { position: absolute; left: 110px; top: 470px; width: 900px; font-size: 32px; line-height: 1.45; color: rgba(245,245,247,.78); }
+.intro .btns { position: absolute; left: 110px; top: 640px; margin: 0; }
 .intro .btn, .outro .btn { color: #F5F5F7; background: rgba(255,255,255,.14); box-shadow: inset 0 1.5px 0 rgba(255,255,255,.2); }
 .intro .btn.focus, .outro .btn.focus { background: #F5F5F7; color: #111114; }
 .keyhint { position: absolute; right: 100px; top: 120px; display: flex; gap: 10px; align-items: center; font-size: 22px; color: rgba(245,245,247,.6); }
@@ -793,7 +793,6 @@ html.as-phone .page::-webkit-scrollbar { display: none; }
 .mback { display: none; position: absolute; z-index: 9; left: 10px; top: 10px; appearance: none; border: 0; cursor: pointer; height: 36px; padding: 0 14px 0 10px; border-radius: 999px;
   font: 700 13px/1 var(--ui); color: var(--fg); background: var(--glass-hi); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); box-shadow: 0 6px 18px var(--shadow); }
 .tv.mob.stacked .mback { display: inline-flex; align-items: center; gap: 4px; }
-.tv.mob.stacked .layer .crumb, .tv.mob.stacked .layer > .axw > .kick:first-child { margin-left: 74px; }
 
 /* меню и шапка */
 .tv.mob .bar { height: auto; padding: 10px 12px 8px; flex-direction: column; align-items: stretch; gap: 8px;
@@ -1167,6 +1166,42 @@ html.as-phone .tv.mob .bar { padding: 6px 16px 8px; }
 .tv.mob .wcard.focus .wav { transform: none; }
 .tv.mob:not(.kbd) .wcard.focus .wav { box-shadow: inset 0 2px 0 rgba(255,255,255,.35), 0 10px 26px var(--shadow); }
 .tv.mob .whonote { margin-top: 26px !important; font-size: 12px; }
+
+/* первый слайд исследования: слева заголовок и кнопки, справа оглавление */
+.icol { position: absolute; left: 110px; top: 200px; width: 940px; }
+.icol .dq, .icol .lead, .icol .btns { position: static !important; width: auto !important; }
+.slide.intro .icol .dq { font-size: 96px; line-height: .98; }
+.icol .lead { margin-top: 34px !important; }
+.icol .btns { margin-top: 44px !important; }
+.slide.intro > .art { opacity: .4; }
+.toc { position: absolute; right: 100px; top: 190px; width: 700px; padding: 26px 26px 18px; border-radius: 40px;
+  background: rgba(22,22,28,.62); -webkit-backdrop-filter: blur(40px) saturate(1.6); backdrop-filter: blur(40px) saturate(1.6); box-shadow: inset 0 1.5px 0 rgba(255,255,255,.14), 0 40px 90px rgba(0,0,0,.45); }
+.toc h4 { margin: 0 0 10px 14px; font-size: 20px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: rgba(245,245,247,.55); }
+.toci { display: grid; grid-template-columns: 54px 1fr auto; align-items: baseline; gap: 14px; padding: 13px 16px 14px; border-radius: 18px; color: #F5F5F7;
+  transition: background-color var(--t-fast) ease, transform var(--t-move) var(--spring); }
+.toci + .toci { box-shadow: inset 0 1px 0 rgba(255,255,255,.07); }
+.toci .tn { font: 700 20px/1 var(--ui); color: rgba(245,245,247,.45); font-variant-numeric: tabular-nums; }
+.toci b { font-size: 27px; font-weight: 700; letter-spacing: -.01em; }
+.toci .ts { font: 800 22px/1 var(--d1); color: #FF5A74; letter-spacing: -.02em; white-space: nowrap; }
+.toci:nth-child(n+8) .ts { font: 600 19px/1 var(--ui); color: rgba(245,245,247,.55); letter-spacing: 0; }
+.toci.focus { background: #F5F5F7; color: #111114; transform: scale(1.02); box-shadow: 0 16px 40px rgba(0,0,0,.4); }
+.toci.focus .tn, .toci.focus .ts { color: #111114; }
+.dsrc.isrc { bottom: 104px; right: 100px; font-size: 20px; }
+/* то же на телефоне */
+.mpane .mh1 { font-size: 28px; line-height: 1.05; margin-top: 12px; }
+.mtoc { margin-top: 20px; padding: 6px; border-radius: 18px; background: rgba(255,255,255,.05); }
+.mtoc h4 { margin: 8px 10px 4px; font-size: 11.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: rgba(245,245,247,.55); }
+.mtoci { appearance: none; border: 0; width: 100%; display: grid; grid-template-columns: 26px 1fr auto; align-items: baseline; gap: 8px; min-height: 44px; padding: 11px 10px; border-radius: 12px;
+  background: none; color: #F5F5F7; font: 600 15px/1.25 var(--ui); text-align: left; cursor: pointer; }
+.mtoci + .mtoci { box-shadow: inset 0 1px 0 rgba(255,255,255,.07); }
+.mtoci .tn { font-size: 12px; color: rgba(245,245,247,.45); font-variant-numeric: tabular-nums; }
+.mtoci .ts { font: 800 14px/1 var(--d1); color: #FF5A74; white-space: nowrap; }
+.mtoci:nth-child(n+8) .ts { font: 600 12px/1 var(--ui); color: rgba(245,245,247,.55); }
+.mtoci:active { background: rgba(255,255,255,.1); }
+.mtoci:focus-visible { outline: 2px solid #F0405E; outline-offset: -2px; }
+/* плеер: тифлокомментарий не прячется под всплывающей подсказкой */
+.layer.player.ad.open ~ .toast { top: 250px; }
+.nw { white-space: nowrap; }
 </style>
 
 <div class="viewsw" role="group" aria-label="Вид страницы">
@@ -1391,7 +1426,7 @@ html.as-phone .tv.mob .bar { padding: 6px 16px 8px; }
     more: { mo: { cols: 1 } },
     who: { who: {} },
     shows: { feat: { down: "gen" }, gen: { up: "feat", down: "grid" }, grid: { cols: 5, up: "gen", down: "neweps" }, neweps: { up: "grid" } },
-    deck: { go: {} },
+    deck: { go: { down: "toc" }, toc: { cols: 1, up: "go" } },
     player: { skip: { down: "scrub" }, scrub: { up: function () { return pos < 90 ? "skip" : null; }, down: "ctrl" }, ctrl: { up: "scrub" }, nx: {} }
   };
 
@@ -1471,7 +1506,7 @@ html.as-phone .tv.mob .bar { padding: 6px 16px 8px; }
     if (!t || !groups[t]) return bump(dir);
     var i;
     if (t === "nav") i = tab;
-    else if (t === "hero" || t === "acts") i = 0;
+    else if (t === "hero" || t === "acts" || t === "toc") i = 0;
     else if (mem[L + t] != null) i = mem[L + t];
     else i = nearest(groups[t]);
     focus(t, i);
@@ -1741,7 +1776,7 @@ html.as-phone .tv.mob .bar { padding: 6px 16px 8px; }
   function openPlayer(id, e) {
     show = id; ep = e || 0; pos = 52; playing = true; idle = 0;
     var s = T[id]; if (A.sdh) subs = true; if (A.ad && s.ad) adOn = true;
-    openLayer("player", art(id, false) + '<div class="pshade"></div><p class="subline">' + (A.sdh ? "<i>[тревожная музыка]</i> " : "") + '— Этого города нет на картах. Значит, его кто-то стер.</p><p class="adline">' + I.ad + "<span>Тифлокомментарий: " + (s.adt || "герой медленно оборачивается к двери — в коридоре никого.") + "</span></p>" + '<div class="pui"><div class="ptitle"><b>' + s.t + '</b><span id="eplab">' + epLabel() + '</span></div><span class="sleep"></span>' +
+    openLayer("player", art(id, false) + '<div class="pshade"></div><p class="subline">' + (A.sdh ? "<i>[тревожная музыка]</i> " : "") + '— Смотрите! Вот оно, прямо перед нами.</p><p class="adline">' + I.ad + "<span>Тифлокомментарий: " + (s.adt || "герой медленно оборачивается к двери — в коридоре никого.") + "</span></p>" + '<div class="pui"><div class="ptitle"><b>' + s.t + '</b><span id="eplab">' + epLabel() + '</span></div><span class="sleep"></span>' +
       '<div class="skip">' + f("skip", 0, "btn", "Пропустить заставку", "skip", "Пропустить заставку") + "</div>" +
       '<div class="pglass">' + f("scrub", 0, "scrub", '<div class="tr"><i class="fl"></i><i class="kn"></i></div><div class="prev">' + art(id, "") + '<span class="prev-time" id="pt"></span></div>', "pp", "Шкала времени") +
       '<div class="times"><span id="ta"></span><span id="tb"></span></div><div class="ctr">' +
@@ -2088,6 +2123,9 @@ html.as-phone .tv.mob .bar { padding: 6px 16px 8px; }
       demos: [["Фильтр «Тифло»", "adfilter"], ["Удобство", "a11y"]] }
   ];
   var slideN = 0, SLIDES = PAINS.length + EXTRA.length + 2;
+  var TOC = [["01", "Долгий выбор", "10+ мин"], ["02", "Непонятная подписка", "49%"], ["03", "Мучительный поиск", "×5–10"], ["04", "Неразборчивая речь", "78%"],
+    ["05", "Автозапуск серий", "+21 мин"], ["06", "Сложная отмена", "47%"], ["07", "Доступность", "голос · 1 кнопка"], ["08", "Закон", "детский раздел"], ["09", "Кинопоиск", "уроки"]];
+  var SRC = "Nielsen, Deloitte, NN/g, YouGov, Preply, Чикагский университет, ASSETS 2018, FCC, FTC, Кинопоиск";
 
   function slideHTML(n) {
     var prog = '<div class="dprog">' + Array.apply(null, { length: SLIDES }).map(function (_, i) { return '<i class="' + (i <= n ? "on" : "") + '"></i>'; }).join("") +
@@ -2095,8 +2133,11 @@ html.as-phone .tv.mob .bar { padding: 6px 16px 8px; }
     var hint = '<div class="keyhint"><kbd>←</kbd><kbd>→</kbd> листать</div>';
     if (n === 0) {
       return '<div class="slide intro">' + art("northline", false) + '<div class="dshade"></div><div class="dk"><i></i>Исследование · Ореол ТВ</div>' + hint +
-        '<h2 class="dq">Почему зрители устают от ТВ-приложений</h2><p class="lead">Мы собрали шесть главных жалоб зрителей из исследований и показали, как Ореол их решает. Каждое решение можно открыть прямо здесь. В конце — удобство для людей с инвалидностью, требования закона и уроки Кинопоиска.</p>' +
-        '<div class="btns">' + f("go", 0, "btn", "Начать →", "slide:1", "Начать") + f("go", 1, "btn", "К приложению", "home", "К приложению") + "</div>" + prog + "</div>";
+        '<div class="icol"><h2 class="dq">Почему зрители устают от <span class="nw">ТВ-приложений</span></h2><p class="lead">Шесть главных жалоб зрителей из исследований - и как Ореол их решает. Каждое решение можно открыть прямо на экране.</p>' +
+        '<div class="btns">' + f("go", 0, "btn", "Начать →", "slide:1", "Начать") + f("go", 1, "btn", "К приложению", "home", "К приложению") + "</div></div>" +
+        '<div class="toc"><h4>Что внутри</h4>' + TOC.map(function (t, i) {
+          return f("toc", i, "toci", '<span class="tn">' + t[0] + "</span><b>" + t[1] + '</b><span class="ts">' + t[2] + "</span>", "slide:" + (i + 1), t[1] + ". " + t[2]);
+        }).join("") + "</div>" + '<p class="dsrc isrc">Источники: ' + SRC + "</p>" + prog + "</div>";
     }
     if (n === SLIDES - 1) {
       return '<div class="slide outro">' + art("gold", false, "media/oreol/goldrush3.jpg") + '<div class="dshade"></div><div class="dk"><i></i>Итог</div>' + hint +
@@ -2218,8 +2259,10 @@ html.as-phone .tv.mob .bar { padding: 6px 16px 8px; }
   function mSlide(n) {
     var btn = function (label, a, alt) { return '<button type="button" class="mbtn' + (alt ? " alt2" : "") + '" data-m="' + a + '">' + label + "</button>"; };
     var h;
-    if (n === 0) h = '<span class="mk"><i></i>Исследование · Ореол ТВ</span><h3>Почему зрители устают от ТВ-приложений</h3><p>Мы собрали шесть главных жалоб зрителей из исследований и показали, как Ореол их решает. В конце — удобство для людей с инвалидностью, требования закона и уроки Кинопоиска.</p>' +
-      '<div class="mbtns">' + btn("Начать →", "slide:1") + btn("К приложению", "home", 1) + "</div>";
+    if (n === 0) h = '<span class="mk"><i></i>Исследование · Ореол ТВ</span><h3 class="mh1">Почему зрители устают от ТВ-приложений</h3><p>Шесть главных жалоб зрителей из исследований - и как Ореол их решает. Каждое решение можно открыть прямо на экране.</p>' +
+      '<div class="mbtns">' + btn("Начать →", "slide:1") + btn("К приложению", "home", 1) + "</div>" +
+      '<div class="mtoc"><h4>Что внутри</h4>' + TOC.map(function (t, i) { return '<button type="button" class="mtoci" data-m="slide:' + (i + 1) + '"><span class="tn">' + t[0] + "</span><b>" + t[1] + '</b><span class="ts">' + t[2] + "</span></button>"; }).join("") + "</div>" +
+      '<p class="msrc">Источники: ' + SRC + "</p>";
     else if (n === SLIDES - 1) h = '<span class="mk"><i></i>Итог</span><h3>Шесть проблем — шесть решений</h3><div class="msum">' + PAINS.map(function (p) { return "<div><b>" + p.stat + "</b>" + p.fix.split(".")[0] + ".</div>"; }).join("") + "</div>" +
       '<div class="mbtns">' + btn("Открыть приложение", "home") + btn("Сначала", "slide:0", 1) + "</div>";
     else if (n > PAINS.length) {
