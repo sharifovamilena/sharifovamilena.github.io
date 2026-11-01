@@ -396,6 +396,12 @@ html:has(body.open) { overflow: hidden; }
 
 .hero-plate { aspect-ratio: 16 / 9; border: 0; }
 
+/* two-column hero: the photo must fill its half of the row, otherwise the
+   grid's black backing shows as a band under a short 16:9 plate */
+@media (min-width: 861px) {
+  .hero-plate { aspect-ratio: auto; height: 100%; min-height: 0; align-self: stretch; }
+}
+
 .cta {
   display: inline-flex;
   align-items: center;
@@ -516,6 +522,12 @@ html:has(body.open) { overflow: hidden; }
 
 .about > * { background: var(--paper); }
 .about-plate { aspect-ratio: 3 / 4; border: 0; }
+
+/* same as the hero: the portrait fills its column so the grid backing
+   never shows as a black band under a short plate */
+@media (min-width: 861px) {
+  .about-plate { aspect-ratio: auto; height: 100%; min-height: 0; align-self: stretch; }
+}
 .about-text { padding: clamp(20px, 2.6vw, 40px); display: flex; flex-direction: column; gap: 22px; }
 
 .figs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--ink); border: 1px solid var(--ink); margin-top: auto; }
