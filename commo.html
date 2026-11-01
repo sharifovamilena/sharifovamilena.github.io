@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yandex COMMO - арт-дирекшн бренда и концепция развития айдентики | Милена Шарифова</title>
+<meta name="description" content="Ревью визуального языка бренда COMMO (Yandex Factory) и концепция развития айдентики под новую продуктовую стратегию: четыре уровня системы, три коллекции, линейки как поведение.">
+<meta name="author" content="Милена Шарифова">
+<meta name="theme-color" content="#EAE8E3">
+<link rel="canonical" href="https://sharifovamilena.github.io/commo.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sharifovamilena.github.io/commo.html">
+<meta property="og:title" content="Yandex COMMO - арт-дирекшн бренда и концепция развития айдентики | Милена Шарифова">
+<meta property="og:description" content="Ревью визуального языка бренда COMMO (Yandex Factory) и концепция развития айдентики под новую продуктовую стратегию: четыре уровня системы, три коллекции, линейки как поведение.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://sharifovamilena.github.io/images/commo-cover.webp">
+<meta property="og:image:width" content="1800">
+<meta property="og:image:height" content="1012">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yandex COMMO - арт-дирекшн бренда и концепция развития айдентики | Милена Шарифова">
+<meta name="twitter:description" content="Ревью визуального языка бренда COMMO (Yandex Factory) и концепция развития айдентики под новую продуктовую стратегию: четыре уровня системы, три коллекции, линейки как поведение.">
+<meta name="twitter:image" content="https://sharifovamilena.github.io/images/commo-cover.webp">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ---------- DECK: горизонтальная листалка слайдов презентации ---------- */
+.deck { padding: 0; margin-block: clamp(4px, 1vw, 10px) clamp(20px, 2.6vw, 36px); border: 1px solid var(--ink); background: var(--ink); }
+.deck-frame { position: relative; }
+.deck-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background: var(--paper-2);
+}
+.deck-track::-webkit-scrollbar { display: none; }
+.deck-track:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
+.deck-slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; aspect-ratio: 16 / 9; }
+.deck-slide img { display: block; width: 100%; height: 100%; object-fit: contain; background: var(--paper-2); }
+
+.deck-bar {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 8px 10px;
+  background: var(--paper);
+  border-top: 1px solid var(--ink);
+}
+.deck-nav { display: flex; gap: 1px; background: var(--ink); border: 1px solid var(--ink); }
+.deck-btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  padding: 9px 14px;
+  transition: background 90ms linear, color 90ms linear;
+}
+.deck-btn:hover:not(:disabled) { background: var(--red); color: var(--paper-2); }
+.deck-btn:disabled { background: var(--paper); color: var(--grey-2); cursor: default; }
+.deck-count { font-size: 11px; letter-spacing: 0.13em; white-space: nowrap; }
+.deck-progress { height: 3px; background: #C9C7C1; border: 1px solid var(--ink); }
+.deck-progress span { display: block; height: 100%; background: var(--ink); transition: width 140ms linear; }
+
+@media (max-width: 560px) {
+  .deck-bar { grid-template-columns: auto minmax(0, 1fr); row-gap: 10px; }
+  .deck-progress { grid-column: 1 / -1; }
+}
+@media (pointer: coarse) { .deck-btn { min-height: 44px; } }
+@media (prefers-reduced-motion: reduce) {
+  .deck-track { scroll-behavior: auto; }
+  .deck-progress span { transition: none; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Yandex COMMO - арт-дирекшн бренда и концепция развития айдентики",
+  "url": "https://sharifovamilena.github.io/commo.html",
+  "creator": {
+    "@type": "Person",
+    "name": "Милена Шарифова",
+    "url": "https://sharifovamilena.github.io/"
+  },
+  "image": "https://sharifovamilena.github.io/images/commo-cover.webp",
+  "description": "Ревью визуального языка бренда COMMO (Yandex Factory) и концепция развития айдентики под новую продуктовую стратегию: четыре уровня системы, три коллекции, линейки как поведение.",
+  "inLanguage": "ru"
+}
+</script>
+</head>
+<body>
+<div class="noise" aria-hidden="true"></div>
+
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<!-- ============================ TOPBAR ============================ -->
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="mark" href="index.html">Милена Шарифова<sup>®</sup></a>
+    <nav class="navset" aria-label="Разделы">
+      <a href="index.html#work">Проекты</a>
+      <a href="index.html#disciplines">Услуги</a>
+      <a href="index.html#about">О себе</a>
+      <a href="index.html#services">Ставки</a>
+      <a href="https://drive.google.com/file/d/1qAnJxYnNacGAQRD8UT551ex5NV8YN2BC/view?usp=sharing" target="_blank" rel="noopener">CV ↗</a>
+      <a class="hot" href="index.html#contact">Контакт</a>
+    </nav>
+    <button class="burger" id="burger" aria-expanded="false">Меню</button>
+  </div>
+</header>
+<div class="menu" id="menu">
+  <a href="index.html#work">Проекты</a>
+  <a href="index.html#disciplines">Услуги</a>
+  <a href="index.html#about">О себе</a>
+  <a href="index.html#services">Ставки</a>
+  <a href="https://drive.google.com/file/d/1qAnJxYnNacGAQRD8UT551ex5NV8YN2BC/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+  <a href="index.html#contact">Контакт</a>
+</div>
+
+<main id="main">
+
+  <article class="rail case-top">
+    <a class="back" href="index.html">&lt;&lt;&lt; Проекты</a>
+
+    <div class="case-title">
+      <span class="mono dim">Проект 02 / Арт-дирекшн бренда и презентация</span>
+      <h1 class="macro t-xl" style="margin-top: 12px;">Yandex COMMO<span class="vh"> - ревью стиля и концепция развития айдентики</span></h1>
+    </div>
+
+    <section class="deck" aria-roledescription="карусель" aria-label="Презентация COMMO, 20 слайдов">
+      <div class="deck-frame">
+        <div class="deck-track" id="deckTrack" tabindex="0" aria-label="Слайды презентации, листайте стрелками">
+        <figure class="deck-slide">
+          <img src="images/commo-s01.webp" width="1600" height="900" alt="Слайд 01 из 20. Титульный слайд презентации: развитие визуальной системы бренда COMMO" fetchpriority="high">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s02.webp" width="1600" height="900" alt="Слайд 02 из 20. Содержание защиты: разбор, конфликт, решение и носители" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s03.webp" width="1600" height="900" alt="Слайд 03 из 20. ДНК бренда COMMO: эстетика, человечность, точность, практичность" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s04.webp" width="1600" height="900" alt="Слайд 04 из 20. Ревью: четыре элемента визуального языка, которые уже работают" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s05.webp" width="1600" height="900" alt="Слайд 05 из 20. Аудит носителей: что остается базой, что можно менять, что считывается слабее" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s06.webp" width="1600" height="900" alt="Слайд 06 из 20. Продуктовая стратегия: четыре читаемых уровня портфеля" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s07.webp" width="1600" height="900" alt="Слайд 07 из 20. Главный конфликт: одного цвета для новой матрицы уже не хватит" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s08.webp" width="1600" height="900" alt="Слайд 08 из 20. Архитектура бренда: не добавлять приемов, а разделить роли по уровням" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s09.webp" width="1600" height="900" alt="Слайд 09 из 20. Концепция развития: один язык для разных продуктов" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s10.webp" width="1600" height="900" alt="Слайд 10 из 20. Принцип системы: чем ближе к продукту, тем больше конкретики" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s11.webp" width="1600" height="900" alt="Слайд 11 из 20. Исследование: референсы как принципы для трех коллекций" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s12.webp" width="1600" height="900" alt="Слайд 12 из 20. Мудборд коллекции Essential - ясность" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s13.webp" width="1600" height="900" alt="Слайд 13 из 20. Мудборд коллекции Signature - характер" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s14.webp" width="1600" height="900" alt="Слайд 14 из 20. Мудборд коллекции Advanced - глубина" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s15.webp" width="1600" height="900" alt="Слайд 15 из 20. Линейки TRUE, GO, TURBO и POWER как разное поведение кадра" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s16.webp" width="1600" height="900" alt="Слайд 16 из 20. Будущий сценарий каталога на сайте: двойной вход по товару и по сценарию" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s17.webp" width="1600" height="900" alt="Слайд 17 из 20. Проверка масштабируемости: линия GO в трех уровнях выразительности" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s18.webp" width="1600" height="900" alt="Слайд 18 из 20. Social: собственная контентная среда бренда" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s19.webp" width="1600" height="900" alt="Слайд 19 из 20. План внедрения: сначала проверить в работе, потом превращать в правила" loading="lazy" decoding="async">
+        </figure>
+        <figure class="deck-slide">
+          <img src="images/commo-s20.webp" width="1600" height="900" alt="Слайд 20 из 20. Финальный слайд презентации с контактами автора" loading="lazy" decoding="async">
+        </figure>
+        </div>
+        <span class="plate-corner">FIG. 06</span>
+      </div>
+      <div class="deck-bar">
+        <div class="deck-nav">
+          <button type="button" class="deck-btn" id="deckPrev" aria-label="Предыдущий слайд" disabled>&lt;&lt;&lt;</button>
+          <button type="button" class="deck-btn" id="deckNext" aria-label="Следующий слайд">&gt;&gt;&gt;</button>
+        </div>
+        <span class="mono deck-count" id="deckCount" aria-live="polite">Слайд 01 / 20</span>
+        <div class="deck-progress" aria-hidden="true"><span id="deckFill" style="width: 5%;"></span></div>
+      </div>
+    </section>
+
+    <div class="spec" style="margin-top: 0;">
+      <div><span class="mono dim">Дисциплина</span><strong>Арт-дирекшн · Айдентика</strong></div>
+      <div><span class="mono dim">Роль</span><strong>Бренд арт-директор</strong></div>
+      <div><span class="mono dim">Клиент</span><strong>Yandex Factory · COMMO</strong></div>
+      <div><span class="mono dim">Формат</span><strong>Презентация, 20 слайдов</strong></div>
+    </div>
+
+    <div class="case-split">
+      <div><h2>Бриф</h2></div>
+      <div>
+        <p class="copy">
+          Сделать ревью существующего визуального языка COMMO и предложить концепцию
+          развития айдентики - с учетом продуктовой стратегии бренда.
+        </p>
+        <p class="copy">
+          Я начала не с картинки, а с разбора: что в бренде уже работает и не должно
+          меняться, и где система начинает ломаться при росте ассортимента. Сильное
+          у COMMO - контекст жизни, тактильность, спокойный голос и форма продукта.
+          Проблема в другом: цвет одновременно отвечал за настроение, линейку и подачу,
+          и в момент выбора покупателю было нечем отличить один продукт от другого.
+        </p>
+      </div>
+    </div>
+
+    <div class="case-split">
+      <div><h2>Концепция</h2></div>
+      <div>
+        <p class="copy">
+          Не добавлять бренду больше приемов, а развести роли по уровням. Мастер-бренд
+          держит узнаваемость и не меняется. Коллекции Essential, Signature и Advanced
+          отвечают за уровень выразительности. Линейки TRUE, GO, TURBO и POWER - за
+          поведение кадра: ритм, композицию и моушн. Категория говорит про функцию и факты.
+        </p>
+        <p class="copy">
+          Чем ближе к продукту, тем больше конкретики. Один язык работает на всем
+          ассортименте, но в момент выбора человек видит разницу.
+        </p>
+      </div>
+    </div>
+
+    <div class="case-split">
+      <div><h2>Сделано</h2></div>
+      <div><p class="copy">
+          Ревью визуального языка и аудит носителей · архитектура бренда из четырех уровней ·
+          три коллекции с мудбордами и принципами · линейки как поведение кадра ·
+          проверка системы на масштабируемость · сценарий каталога на сайте и в social ·
+          план внедрения · презентация на 20 слайдов.
+        </p></div>
+    </div>
+
+    <div class="nextbar">
+      <div>
+        <span class="mono dim">Дальше / 03</span>
+        <h3>Ореол ТВ</h3>
+      </div>
+      <a class="cta" href="oreol.html">Открыть <span>&gt;&gt;&gt;</span></a>
+    </div>
+  <div class="rail">
+    <div class="foot-grid">
+      <div><span class="mono dim">© 2026</span><br><span class="mono">Милена Шарифова®</span></div>
+      <div><span class="mono dim">География</span><br><span class="mono">Worldwide</span></div>
+      <div><span class="mono dim">Роль</span><br><span class="mono">Design Lead</span></div>
+      <div><span class="mono dim">Архив</span><br><a class="mono" href="https://www.behance.net/MilenaSharee9d" target="_blank" rel="noopener">Behance ↗</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var track = document.getElementById("deckTrack");
+  if (!track) return;
+  var prev = document.getElementById("deckPrev");
+  var next = document.getElementById("deckNext");
+  var count = document.getElementById("deckCount");
+  var fill = document.getElementById("deckFill");
+  var total = track.children.length;
+
+  function index() {
+    var w = track.clientWidth || 1;
+    return Math.min(total - 1, Math.max(0, Math.round(track.scrollLeft / w)));
+  }
+  function sync() {
+    var i = index();
+    count.textContent = "Слайд " + String(i + 1).padStart(2, "0") + " / " + total;
+    fill.style.width = ((i + 1) / total * 100) + "%";
+    prev.disabled = i === 0;
+    next.disabled = i === total - 1;
+  }
+  function go(step) {
+    var w = track.clientWidth;
+    track.scrollTo({ left: (index() + step) * w, behavior: "smooth" });
+  }
+
+  prev.addEventListener("click", function () { go(-1); });
+  next.addEventListener("click", function () { go(1); });
+  track.addEventListener("keydown", function (ev) {
+    if (ev.key === "ArrowRight") { ev.preventDefault(); go(1); }
+    if (ev.key === "ArrowLeft") { ev.preventDefault(); go(-1); }
+  });
+
+  var t;
+  track.addEventListener("scroll", function () {
+    clearTimeout(t);
+    t = setTimeout(sync, 70);
+  }, { passive: true });
+  window.addEventListener("resize", sync);
+  sync();
+})();
+</script>
+<script src="script.js" defer></script>
+</body>
+</html>
