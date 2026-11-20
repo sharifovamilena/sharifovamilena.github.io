@@ -459,13 +459,16 @@ html:has(body.open) { overflow: hidden; }
 
 .feature { background: var(--paper); display: flex; flex-direction: column; }
 .feature.w7 { grid-column: span 7; }
+.feature.w6 { grid-column: span 6; }
 .feature.w5 { grid-column: span 5; }
 .feature.w12 { grid-column: span 12; }
+#project-yandex-afisha { scroll-margin-top: calc(var(--bar) + 16px); }
 
 .feature .plate { border: 0; border-bottom: 1px solid var(--ink); }
 /* paired row: plates stretch to a shared height so the captions align */
 .feature.w7 .plate,
 .feature.w5 .plate { flex: 1 1 auto; min-height: clamp(260px, 32vw, 480px); }
+.feature.w6 .plate { flex: 1 1 auto; aspect-ratio: 16 / 9; }
 .feature.w12 .plate { aspect-ratio: 21 / 8; }
 
 .feature-foot {
@@ -609,6 +612,26 @@ footer { border-top: 1px solid var(--ink); }
 
 .case-plate-lead { aspect-ratio: 21 / 9; }
 
+.case-video { aspect-ratio: 16 / 9; }
+
+.case-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.case-top > section.case-split, .case-gallery { padding-block: 0; }
+.case-gallery { margin-block: clamp(24px, 3.4vw, 48px); }
+.case-gallery h2 { margin-bottom: 14px; }
+.case-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.case-gallery-grid picture { display: block; }
+.case-gallery-grid img { display: block; width: 100%; height: auto; }
+
+@media (max-width: 680px) {
+  .case-gallery-grid { grid-template-columns: 1fr; }
+}
+
 .case-split {
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr);
@@ -650,6 +673,7 @@ footer { border-top: 1px solid var(--ink); }
 }
 
 .nextbar h3 { margin: 4px 0 0; font-family: var(--black); font-size: var(--t-lg); text-transform: uppercase; letter-spacing: -0.04em; line-height: 1; }
+.case-source { border-top: 0; }
 
 .back {
   display: inline-flex;
@@ -686,6 +710,10 @@ footer { border-top: 1px solid var(--ink); }
   .idx-row { grid-template-columns: 48px minmax(0,1fr) 150px 34px; }
   .idx-row .yr { display: none; }
   .feature.w7, .feature.w5 { grid-column: span 12; }
+}
+
+@media (max-width: 680px) {
+  .feature.w6 { grid-column: span 12; }
 }
 
 @media (max-width: 860px) {
