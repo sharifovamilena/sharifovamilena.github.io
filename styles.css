@@ -628,6 +628,11 @@ footer { border-top: 1px solid var(--ink); }
 .case-gallery-grid picture { display: block; }
 .case-gallery-grid img { display: block; width: 100%; height: auto; }
 
+#slurp-website { scroll-margin-top: calc(var(--bar) + 16px); }
+.site-recordings { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: clamp(24px, 3.4vw, 48px); }
+.site-recordings figure { margin: 0; }
+.site-recordings figcaption { margin-top: 8px; }
+
 @media (max-width: 680px) {
   .case-gallery-grid { grid-template-columns: 1fr; }
 }
